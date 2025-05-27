@@ -46,10 +46,10 @@
 
 传统方案：
 
-- `csv_write_conv_mnist.m`  
+- `csv_write_mnist_conv.m`  
   生成传统方案所需的 MNIST 光计算输入文件。
 
-- `csv_read_conv_mnist.m`  
+- `csv_read_mnist_conv.m`  
   读取传统方案的光计算输出结果，转换为卷积后的图像，并可用于对比两种方案的误差分布。
 
 ---
