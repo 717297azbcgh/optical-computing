@@ -1,74 +1,74 @@
-# 光计算卷积文件生成与读取说明
+# Optical Computing Convolution Data Generation and Reading Guide
 
-本项目提供了一系列 MATLAB 脚本，用于生成与读取光计算过程所需的输入输出数据，支持两种光计算方案：位切片方案与传统方案，适用于 BraTS 和 MNIST 两类数据集。  
-通过该工具，可将图像数据转换为光计算输入格式，并将光计算结果还原为卷积后的图像，便于对比分析不同方案的差异与效果。
-
----
-
-## 数据说明
-
-- BraTS 数据集使用随机选取的图像样本 `output_1480.csv` 作为输入源。
-- MNIST 数据集选取测试集中前 200 张图像样本，存储于 `test_samples.csv` 文件中。
+This project provides a collection of MATLAB scripts for generating and reading input/output data required for optical computing. It supports two optical computing schemes: the **bit-slicing scheme** and the **conventional scheme**, applicable to both BraTS and MNIST datasets.  
+With this tool, image data can be converted into optical computing input format, and the output results can be reconstructed into convolved images for comparative analysis of different schemes.
 
 ---
 
-## 目录结构说明
+## Data Description
 
-### 一、BraTS 数据集处理
+- For the **BraTS** dataset, a randomly selected image sample `output_1480.csv` is used as the input source.  
+- For the **MNIST** dataset, the first 200 test images are selected and stored in the `test_samples.csv` file.
 
-位切片方案：
+---
+
+## Directory Structure
+
+### 1. BraTS Dataset Processing
+
+**Bit-Slicing Scheme:**
 
 - `csv_write.m`  
-  根据卷积前的图像（如 `output_1480.csv`），生成位切片方案所需的光计算输入文件。
+  Generates optical computing input files from pre-convolution images (e.g., `output_1480.csv`).
 
 - `csv_read.m`  
-  读取位切片方案的光计算输出结果，并转换为卷积后的图像。
+  Reads the optical computing output results from the bit-slicing scheme and reconstructs the convolved image.
 
-传统方案：
+**Conventional Scheme:**
 
 - `csv_write_conv.m`  
-  生成传统方案所需的光计算输入文件。
+  Generates input files required for the conventional scheme.
 
 - `csv_read_conv.m`  
-  读取传统方案的光计算输出结果，转换为卷积后的图像，并可用于对比两种方案的误差分布。
+  Reads the optical computing output results and reconstructs the convolved image. Can also be used to analyze error distributions between the two schemes.
 
 ---
 
-### 二、MNIST 数据集处理
+### 2. MNIST Dataset Processing
 
-位切片方案：
+**Bit-Slicing Scheme:**
 
 - `csv_write_mnist.m`  
-  根据 `test_samples.csv` 中的图像数据，生成位切片方案所需的光计算输入文件。
+  Generates input files for the bit-slicing scheme using image data from `test_samples.csv`.
 
 - `csv_read_mnist.m`  
-  将位切片方案的光计算输出结果转换为卷积后的图像。
+  Reads the optical computing output results and reconstructs the convolved image.
 
-传统方案：
+**Conventional Scheme:**
 
 - `csv_write_mnist_conv.m`  
-  生成传统方案所需的 MNIST 光计算输入文件。
+  Generates input files required for the conventional scheme for the MNIST dataset.
 
 - `csv_read_mnist_conv.m`  
-  读取传统方案的光计算输出结果，转换为卷积后的图像，并可用于对比两种方案的误差分布。
+  Reads the output results and reconstructs the convolved image. Supports error analysis between the two schemes.
 
 ---
 
-## 使用说明
+## Usage Instructions
 
-1. 选择方案：根据实验需求决定使用位切片方案或传统方案。
-2. 选择数据类型：确定是处理 BraTS 数据还是 MNIST 数据。
-3. 执行流程：
-   - 使用 `csv_write*.m` 脚本生成光计算输入文件；
-   - 将输入文件送入光计算平台执行卷积操作；
-   - 使用 `csv_read*.m` 脚本读取输出结果并还原为图像。
+1. **Select Scheme:** Choose either the bit-slicing scheme or the conventional scheme based on your experiment.
+2. **Select Dataset:** Determine whether you are processing BraTS or MNIST data.
+3. **Workflow:**
+   - Use the appropriate `csv_write*.m` script to generate optical computing input files.
+   - Execute the convolution operation using the optical computing platform.
+   - Use the corresponding `csv_read*.m` script to read output results and reconstruct the convolved images.
 
 ---
 
-## 环境要求
+## Environment Requirements
 
 - MATLAB R2023a
 
 ---
 
-如有问题或需求，请联系项目维护者。
+For any questions or assistance, please contact the project maintainer.
