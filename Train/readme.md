@@ -76,5 +76,4 @@ It includes data preprocessing, model definition and training, optical computing
 
 ## Environment Requirements
 
-- Use the Conda environment configured by `BraTs.yaml` for BraTS-related processing.  
-- Use the Conda environment configured by `MNIST.yaml` for MNIST-related processing.
+- Use the Conda environment configured by `pytorch_GPU.yaml`
