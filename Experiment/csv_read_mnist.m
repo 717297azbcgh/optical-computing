@@ -7,10 +7,10 @@ weight = [ 0.38094833  0.36529493  0.24226627;
 % 归一化
 weight2 = weight ./ max(abs(weight), [], 'all');
 
-% 切片为16个2bit，从最高位MSB到最低位LSB升序编号
-weight4 = round(abs(weight2) * (2^32-1));
+% 切片为4个2bit，从最高位MSB到最低位LSB升序编号
+weight4 = round(abs(weight2) * (2^8-1));
 weight_2bit_all = zeros(3, 3, 4);
-for k = 1:16
+for k = 1:3
     weight_2bit_all(:,:,5-k) = floor(mod(weight4 ./ (4^(k-1)), 4)) / 3;
 end
 
