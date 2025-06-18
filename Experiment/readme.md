@@ -24,6 +24,12 @@ With this tool, image data can be converted into optical computing input format,
 - `csv_read.m`  
   Reads the optical computing output results from the bit-slicing scheme and reconstructs the convolved image.
 
+- `csv_write_32bit.m`  
+  Generates optical computing input files using the **32-bit bit-slicing** format.
+
+- `csv_read_32bit.m`  
+  Reads and reconstructs the convolved image from **32-bit bit-slicing** optical computing output.
+
 **Conventional Scheme:**
 
 - `csv_write_conv.m`  
@@ -43,6 +49,9 @@ With this tool, image data can be converted into optical computing input format,
 
 - `csv_read_mnist.m`  
   Reads the optical computing output results and reconstructs the convolved image.
+
+- `csv_read_mnist_32bit.m`  
+  Reads and reconstructs the convolved image from **32-bit bit-slicing** optical computing output.
 
 **Conventional Scheme:**
 
